@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.DS_Store
+.claude/
+
+# Odamlarning yuz ma'lumotlari — repoga qo'shilmasin
+data/
+
+# Modellar katta, README'dagi buyruq bilan yuklab olinadi
+models/*.onnx

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuzni tanish</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Yuzni tanish</h1>
+    <span id="status" class="status">Kamera yoqilmoqda…</span>
+  </header>
+
+  <main>
+    <section>
+      <div id="stage" class="stage">
+        <video id="video" autoplay playsinline muted></video>
+        <img id="photo" alt="Tekshirilayotgan rasm" hidden>
+        <canvas id="overlay"></canvas>
+        <p id="placeholder" class="placeholder" hidden></p>
+      </div>
+      <div class="toolbar">
+        <button id="cameraBtn" class="secondary" hidden>Kameraga qaytish</button>
+        <label class="button secondary">Rasm bilan tekshirish
+          <input id="checkFile" type="file" accept="image/*" hidden>
+        </label>
+        <span id="fps" class="muted"></span>
+      </div>
+      <ul id="results" class="results"></ul>
+    </section>
+
+    <aside>
+      <section class="card">
+        <h2>Odam qo'shish</h2>
+        <form id="addForm">
+          <label class="field">Ism
+            <input id="name" type="text" maxlength="100" placeholder="Masalan: Ali Valiyev" autocomplete="off">
+          </label>
+          <div class="row">
+            <button id="captureBtn" type="button" class="secondary">Kameradan olish</button>
+            <label class="button secondary">Rasm tanlash
+              <input id="files" type="file" accept="image/*" multiple hidden>
+            </label>
+          </div>
+          <p class="muted hint">3–5 ta turli burchakdan olingan rasm aniqlikni oshiradi.</p>
+          <div id="shots" class="shots"></div>
+          <button id="saveBtn" type="submit" disabled>Saqlash</button>
+          <ul id="report" class="report"></ul>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Bazadagi odamlar <span id="count" class="muted"></span></h2>
+        <ul id="people" class="people"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
